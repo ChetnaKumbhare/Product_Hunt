@@ -3,6 +3,10 @@
 {% if error %}
  {{ error }}<br><br>
 {% endif %}
+
+    {% load static %}
+
+<body style="background-color:khaki">
 <h1>SIGN UP..!</h1>
 <form method="post" action="{% url 'signup' %}">
 {% csrf_token %}
@@ -59,6 +63,8 @@
     </label>
   </div>
 </div>
-<button type="submit" class="btn btn-danger">Sign up</button>
+<button type="submit" class="btn btn-danger" ><a href={%  static 'form.js'  %} style="color:khaki; text-decoration:none">Sign up</button>
 </form>
 {% endblock %}
+</body>
+</html>

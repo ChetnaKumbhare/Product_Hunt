@@ -7,25 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../../../favicon.ico">
 
+  <link rel="shortcut icon" href="{% static 'letter-p.png' %}" />
   <title>Product_Hunt</title>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 
-<body>
+<body  style="background-color:khaki">
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color:#0c1b33;">
       <div class="container">
-      <a class="navbar-brand" href="#"><img src="{% static 'letter-p.png' %}" class="d-inline-block align-top" > Product Hunt</a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'letter-p.png' %}" class="d-inline-block align-top" /> Product Hunt</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'create' %}" ><img src="{% static 'health.png' %}" class="d-inline-block align-top" ></a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Log Out</a>
           </li>
@@ -60,9 +64,6 @@
 
   <footer class="text-muted text-center ">
     <div class="container-fluid">
-      <p class="float-right">
-        <a href="#" style="color:red"><i class="fas fa-arrow-alt-circle-up"></i></a>
-      </p>
       <p>Have a HAPPY @{% now "Y" %} :-)</p>
     </div>
   </footer>
